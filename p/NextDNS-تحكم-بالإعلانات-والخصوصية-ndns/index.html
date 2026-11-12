@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="antialiased"><head><meta name="twitter:card" content="summary_large_image"><meta property="og:title" content="NextDNS: تحكّم بإعلانات الإنترنت وخصوصيتك من مكان واحد"><meta name="twitter:title" content="NextDNS: تحكّم بإعلانات الإنترنت وخصوصيتك من مكان واحد"><meta property="og:description" content="دليل إعداد NextDNS لحجب الإعلانات والمتتبعات على هاتف أندرويد وAndroid TV وGoogle TV والراوتر، مع حدود الخطة المجانية وصندوق يولّد أوامر جهازك محليًا في المتصفح."><meta name="twitter:description" content="دليل إعداد NextDNS لحجب الإعلانات والمتتبعات على هاتف أندرويد وAndroid TV وGoogle TV والراوتر، مع حدود الخطة المجانية وصندوق يولّد أوامر جهازك محليًا في المتصفح."><meta property="og:url" content="https://al3nkboot.github.io/midroid5G/p/NextDNS-%D8%AA%D8%AD%D9%83%D9%85-%D8%A8%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%86%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D8%AE%D8%B5%D9%88%D8%B5%D9%8A%D8%A9-ndns/"><meta property="og:image" content="https://al3nkboot.github.io/midroid5G/og.jpg"><meta name="twitter:image" content="https://al3nkboot.github.io/midroid5G/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600&amp;display=swap" data-precedence="default"><link rel="stylesheet" href="../../assets/styles.css" data-precedence="default"><title>NextDNS: تحكّم بإعلانات الإنترنت وخصوصيتك من مكان واحد — midroid5G</title><meta name="description" content="دليل إعداد NextDNS لحجب الإعلانات والمتتبعات على هاتف أندرويد وAndroid TV وGoogle TV والراوتر، مع حدود الخطة المجانية وصندوق يولّد أوامر جهازك محليًا في المتصفح."><meta name="theme-color" content="#f3f1ec"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><meta name="apple-mobile-web-app-title" content="midroid5G"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="grok-project-id" content="01a15a11-8aca-7953-a296-e3866f9ead69"><meta property="grok:app_id" content="01a15a11-8aca-7953-a296-e3866f9ead69"><meta property="x:creator" content="@midroid5G"><meta property="x:creator:id" content="1225049626308489216"><style id="grok-app-builder-extensions-css">:root{--grok-banner-h:0px}[data-created-with-grok-banner]{pointer-events:none;position:fixed;top:8px;left:0;right:0;z-index:2147483647;display:flex;justify-content:center}[data-created-with-grok-spacer]{display:none;pointer-events:none;flex-shrink:0;height:0}@media (max-width: 767px), (hover: none) and (pointer: coarse){:root{--grok-banner-h:calc(44px + env(safe-area-inset-top, 0px))}[data-created-with-grok-banner]{top:0}[data-created-with-grok-spacer]{display:block;height:var(--grok-banner-h)}[data-grok-viewport-shell]{height:calc(100dvh - var(--grok-banner-h))!important;min-height:calc(100dvh - var(--grok-banner-h))!important;box-sizing:border-box!important}[data-grok-viewport-shell][data-grok-viewport-fixed]{top:var(--grok-banner-h)!important;bottom:0!important;height:auto!important;min-height:0!important;max-height:none!important}}</style>
+<style id="ndns-article-css">
+.reading pre,.nextdns-box pre{direction:ltr;unicode-bidi:isolate;text-align:left;background:var(--color-sheet);border:1px solid var(--color-line);border-radius:var(--radius-md);padding:.9rem 1.05rem;overflow-x:auto;font-family:var(--font-mono);font-size:.92rem;line-height:1.65;white-space:pre-wrap;word-break:break-all;color:var(--color-ink);margin:.4em 0 0}
+.reading :not(pre)>code{font-family:var(--font-mono);font-size:.92em;direction:ltr;unicode-bidi:isolate}
+.nextdns-box{background:var(--color-sheet);border:1px solid var(--color-line);border-radius:var(--radius-lg);padding:1.15rem 1.15rem 1.25rem;margin:1.6em 0;text-align:start}
+.nextdns-box h3{font-family:var(--font-display);font-size:1.25rem;font-weight:700;line-height:1.4;margin:0 0 .4em;color:var(--color-ink)}
+.nextdns-box .nextdns-note,.nextdns-box p{font-family:var(--font-sans);font-size:.95rem;line-height:1.7;color:var(--color-muted);margin:.4em 0 0;text-align:start}
+.nextdns-box label{display:block;font-family:var(--font-sans);font-size:.95rem;font-weight:600;color:var(--color-ink);margin-top:1rem}
+.nextdns-box input[type=text]{display:block;width:100%;max-width:16rem;margin-top:.35rem;margin-inline:0;padding:.55rem .75rem;border:1px solid var(--color-line);border-radius:var(--radius-md);background:var(--color-paper);color:var(--color-ink);font-family:var(--font-mono);font-size:1.05rem;letter-spacing:.08em;direction:ltr;text-align:left;unicode-bidi:isolate}
+.nextdns-box input[type=text]:focus{outline:2px solid var(--color-accent);outline-offset:1px}
+.nextdns-box .nextdns-error{color:#8a2a2a;font-family:var(--font-sans);font-size:.875rem;margin-top:.35rem}
+.nextdns-box .nextdns-out{margin-top:1rem}
+.nextdns-box .nextdns-out-head{display:flex;align-items:center;justify-content:flex-start;gap:.75rem;flex-wrap:wrap}
+.nextdns-box .nextdns-out-head span{font-family:var(--font-sans);font-size:.9rem;font-weight:600;color:var(--color-ink)}
+.nextdns-box button.copy-btn{appearance:none;border:1px solid var(--color-accent);background:var(--color-accent);color:var(--color-accent-fg);font-family:var(--font-sans);font-size:.85rem;font-weight:600;min-height:2.25rem;min-width:4.2rem;padding:.25rem .9rem;border-radius:var(--radius-md);cursor:pointer}
+.nextdns-box button.copy-btn:hover{filter:brightness(1.08)}
+.nextdns-box button.copy-btn:disabled{opacity:.45;cursor:not-allowed}
+.nextdns-box button.copy-btn[data-copied="1"]{background:var(--color-sheet);color:var(--color-accent);border-color:var(--color-accent)}
+
+.ltr,.reading a[href^="http"],.reading a[href^="https"],.nextdns-box a{direction:ltr;unicode-bidi:isolate}
+.nextdns-box,.nextdns-box h3,.nextdns-box label,.nextdns-box .nextdns-note,.nextdns-box .nextdns-out-head,.nextdns-box .nextdns-out-head span{direction:rtl;text-align:start}
+.nextdns-field{display:flex;justify-content:flex-start;margin-top:.35rem;direction:rtl}
+.nextdns-box input[type=text]{margin:0;margin-inline:0;width:16rem;max-width:100%;flex:0 0 auto}
+</style>
+</head><body><!--$--><div class="min-h-screen bg-paper text-ink"><header class="border-b border-line"><a href="#content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-3 focus:bg-sheet focus:px-3 focus:py-2">تخطَّ إلى المحتوى</a><div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-4"><a class="inline-flex items-center gap-2.5 text-ink" href="../../"><span aria-hidden="true" class="size-2 bg-accent"></span><span class="font-sans text-xl font-semibold tracking-tight sm:text-2xl">midroid5G</span></a><nav class="flex items-center" aria-label="التنقّل"><a class="inline-flex min-h-11 items-center rounded-md px-3 text-sm font-medium text-muted transition-colors duration-150 hover:text-ink" href="../../archive/">الأرشيف</a><a class="inline-flex min-h-11 items-center rounded-md px-3 text-sm font-medium text-muted transition-colors duration-150 hover:text-ink" href="https://x.com/midroid5G" target="_blank" rel="noopener">تابعنا على X @midroid5G</a></nav></div></header><main id="content" class="mx-auto px-5 max-w-4xl"><div class="pointer-events-none fixed top-0 start-0 z-40 h-0.5 bg-accent" aria-hidden="true" style="width: 0%;"></div><a class="mt-6 inline-flex min-h-11 items-center gap-2 text-sm text-muted hover:text-ink" href="../../"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-4" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>الرئيسية</a>
+<article class="mt-6"><p class="text-sm text-muted"><span class="text-accent">تقنية</span><span aria-hidden="true"> · </span><time datetime="2026-11-12">12 نوفمبر 2026</time><span aria-hidden="true"> · </span><span class="tabular-nums">8 دقائق</span></p>
+<h1 class="article-title mt-4"><span dir="ltr">NextDNS</span>: تحكّم بإعلانات الإنترنت وخصوصيتك من مكان واحد</h1>
+<div class="mt-8"><div class="reading">
+<p>هل تريد تقليل الإعلانات وأدوات التتبع على هاتفك أو على شاشة <span class="ltr" dir="ltr">Android TV</span>، وحتى على أجهزة المنزل كلها، من مكان واحد؟ <strong><span class="ltr" dir="ltr">NextDNS</span></strong> خدمة DNS تتيح لك بناء إعداد مخصص لحجب الإعلانات والمتتبعات والمواقع الضارة، من دون أن تثبّت تطبيقًا على كل جهاز. في هذا الدليل نراجع إنشاء الحساب من <a href="https://my.nextdns.io" target="_blank" rel="noopener">my.nextdns.io</a>، وتفعيله عبر <span class="ltr" dir="ltr">Private DNS</span> على أندرويد، ثم الطرق المتاحة لتلفزيون <span class="ltr" dir="ltr">Android TV</span> و<span class="ltr" dir="ltr">Google TV</span> والراوتر، مع حدود الخطة المجانية وما ينبغي معرفته عن حجب إعلانات <span class="ltr" dir="ltr">YouTube</span>.</p>
+
+<h2>ما هو <span class="ltr" dir="ltr">NextDNS</span></h2>
+<p><a href="https://nextdns.io" target="_blank" rel="noopener"><span class="ltr" dir="ltr">NextDNS</span></a> خدمة DNS سحابية، يصفها موقعها الرسمي بأنها جدار حماية للإنترنت الحديث. بدلًا من الاعتماد على خادم أسماء شركة الاتصالات، تمر استعلامات DNS عبر إعدادك، فتُحجب النطاقات المدرجة في قوائم الحجب قبل أن يصل التطبيق أو الموقع إلى خوادمه.</p>
+<p>لأن الحجب يحدث على مستوى النظام، فهو يشمل المتصفح والتطبيقات معًا، ويعمل على شبكة الواي فاي وبيانات الجوال بعد تفعيل <span class="ltr" dir="ltr">Private DNS</span>. وعلى أندرويد 9 فأعلى يستخدم هذا الخيار بروتوكول <span class="ltr" dir="ltr">DNS-over-TLS</span> لتشفير الاستعلامات. أما الأثر على المعالج والذاكرة والبطارية فمحدود، لأن العمل يتم عند طلب الاسم لا داخل كل تطبيق.</p>
+
+<h2>إعداد الحساب</h2>
+<p>ابدأ من لوحة التحكم، ثم انسخ معرّف إعدادك قبل نقل أي جهاز إليه.</p>
+<ol>
+<li>ادخل إلى <a href="https://my.nextdns.io" target="_blank" rel="noopener">my.nextdns.io</a> أو <a href="https://nextdns.io" target="_blank" rel="noopener">nextdns.io</a> وأنشئ حسابًا مجانيًا. حفظ الإعدادات ومعرّف التكوين يتطلب حسابًا.</li>
+<li>من تبويب <strong><span class="ltr" dir="ltr">Privacy</span></strong> (الخصوصية) أضف قوائم الحجب المناسبة. من القوائم الواردة في كتالوج <span class="ltr" dir="ltr">NextDNS</span> الرسمي نرشّح <strong><span class="ltr" dir="ltr">AdGuard DNS filter</span></strong> و<strong><span class="ltr" dir="ltr">OISD</span></strong>. يُفضَّل ألا تفعّل عددًا كبيرًا من القوائم دفعة واحدة، حتى لا يُحجب موقع أو تطبيق سليم بالخطأ.</li>
+<li>إذا كانت قائمة تجريبية لحجب إعلانات <span class="ltr" dir="ltr">YouTube</span> متاحة في حسابك ضمن الخصوصية ثم «إضافة قائمة حجب»، يمكنك تجربتها. هذه الميزة تجريبية، ونتيجتها غير مضمونة، وقد تؤثر في بعض خدمات <span class="ltr" dir="ltr">YouTube</span>.</li>
+<li>من تبويب <strong><span class="ltr" dir="ltr">Setup</span></strong> انسخ معرّف إعدادك (<span class="ltr" dir="ltr">Configuration ID</span>)، وهو عادةً 6 أحرف وأرقام. سيظهر اسم المضيف على صورة <code>abc123.dns.nextdns.io</code>، مع وضع معرّفك مكان <code>abc123</code>.</li>
+</ol>
+
+<aside class="nextdns-box" id="nextdns-id-box">
+<h3>ولّد اسم المضيف وأوامر <span class="ltr" dir="ltr">ADB</span> من معرّفك</h3>
+<p class="nextdns-note">أدخل معرّف <span class="ltr" dir="ltr">NextDNS</span> المكوّن من 6 أحرف أو أرقام إنجليزية. هذه الأداة تولّد النص محليًا في متصفحك فقط، ولا ترسل شيئًا إلى أي خادم، ولا تستطيع تغيير إعدادات أي جهاز.</p>
+<label for="nextdns-id">المعرّف</label>
+<div class="nextdns-field"><input id="nextdns-id" type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="6" dir="ltr" placeholder="abc123" aria-describedby="nextdns-id-error nextdns-id-hint"></div>
+<p class="nextdns-note" id="nextdns-id-hint">يُقبل 6 أحرف أو أرقام إنجليزية صغيرة فقط، مثل abc123.</p>
+<p class="nextdns-error" id="nextdns-id-error" hidden>المعرّف غير مكتمل أو غير صالح. أدخل 6 أحرف أو أرقام إنجليزية، من دون رموز أو مسافات.</p>
+<div class="nextdns-out">
+<div class="nextdns-out-head"><span>اسم المضيف لـ <span class="ltr" dir="ltr">Private DNS</span></span><button type="button" class="copy-btn" data-copy="nextdns-host" disabled>نسخ</button></div>
+<pre dir="ltr"><code id="nextdns-host">abc123.dns.nextdns.io</code></pre>
+</div>
+<div class="nextdns-out">
+<div class="nextdns-out-head"><span>أوامر <span class="ltr" dir="ltr">ADB</span> للتلفزيون</span><button type="button" class="copy-btn" data-copy="nextdns-adb" disabled>نسخ</button></div>
+<pre dir="ltr"><code id="nextdns-adb">adb connect TV-IP
+adb shell settings put global private_dns_mode hostname
+adb shell settings put global private_dns_specifier abc123.dns.nextdns.io</code></pre>
+</div>
+</aside>
+<script>
+(function () {
+  var input = document.getElementById("nextdns-id");
+  var hostEl = document.getElementById("nextdns-host");
+  var adbEl = document.getElementById("nextdns-adb");
+  var err = document.getElementById("nextdns-id-error");
+  var btns = document.querySelectorAll("#nextdns-id-box .copy-btn");
+  var re = /^[a-z0-9]{6}$/;
+  function adbBlock(id) {
+    return "adb connect TV-IP\nadb shell settings put global private_dns_mode hostname\nadb shell settings put global private_dns_specifier " + id + ".dns.nextdns.io";
+  }
+  function setDisabled(on) {
+    btns.forEach(function (b) { b.disabled = on; });
+  }
+  function render() {
+    var raw = (input.value || "").trim().toLowerCase();
+    if (input.value !== raw) input.value = raw;
+    if (!raw) {
+      err.hidden = true;
+      hostEl.textContent = "abc123.dns.nextdns.io";
+      adbEl.textContent = adbBlock("abc123");
+      setDisabled(true);
+      return;
+    }
+    if (!re.test(raw)) {
+      err.hidden = false;
+      hostEl.textContent = "abc123.dns.nextdns.io";
+      adbEl.textContent = adbBlock("abc123");
+      setDisabled(true);
+      return;
+    }
+    err.hidden = true;
+    hostEl.textContent = raw + ".dns.nextdns.io";
+    adbEl.textContent = adbBlock(raw);
+    setDisabled(false);
+  }
+  function copyText(id, btn) {
+    var el = document.getElementById(id);
+    var text = el ? el.textContent : "";
+    function done() {
+      btn.setAttribute("data-copied", "1");
+      var old = btn.textContent;
+      btn.textContent = "تم النسخ";
+      setTimeout(function () {
+        btn.removeAttribute("data-copied");
+        btn.textContent = old;
+      }, 1600);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(function () {
+        var r = document.createRange();
+        r.selectNodeContents(el);
+        var s = window.getSelection();
+        s.removeAllRanges();
+        s.addRange(r);
+        try { document.execCommand("copy"); done(); } catch (e) {}
+        s.removeAllRanges();
+      });
+    } else {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+  }
+  input.addEventListener("input", render);
+  input.addEventListener("blur", render);
+  btns.forEach(function (b) {
+    b.addEventListener("click", function () { copyText(b.getAttribute("data-copy"), b); });
+  });
+  render();
+})();
+</script>
+
+<h2>التفعيل على أندرويد</h2>
+<p>خيار <strong><span class="ltr" dir="ltr">Private DNS</span></strong> مدمج في <strong>أندرويد 9 فأعلى</strong>، وهذه هي الطريقة التي نوصي بها على الهاتف:</p>
+<ol>
+<li>افتح الإعدادات، ثم <strong>الشبكة والإنترنت</strong>. في أجهزة سامسونج يظهر هذا القسم عادةً باسم <strong>الاتصالات</strong>.</li>
+<li>ادخل إلى <strong><span class="ltr" dir="ltr">Private DNS</span></strong> (قد يكون داخل «المزيد» أو الإعدادات المتقدمة).</li>
+<li>اختر <strong>اسم مضيف موفر الخدمة</strong> أو <span class="ltr" dir="ltr">Private DNS</span> provider hostname.</li>
+<li>أدخل اسم المضيف بالصيغة <code>abc123.dns.nextdns.io</code> بعد استبدال <code>abc123</code> بمعرّفك، ثم احفظ.</li>
+</ol>
+<p>بعد الحفظ يعمل <span class="ltr" dir="ltr">NextDNS</span> على اتصال الجهاز، بما في ذلك الواي فاي وبيانات الجوال. إذا بقيت إعلانات <span class="ltr" dir="ltr">YouTube</span> ظاهرة داخل التطبيق، امسح ذاكرة التخزين المؤقت لتطبيق <span class="ltr" dir="ltr">YouTube</span> من إعدادات التطبيق ثم التخزين، وأعد فتحه. هذه خطوة عملية بعد تغيير DNS، وهي لا تضمن اختفاء الإعلانات.</p>
+<p>تحققنا في 12 نوفمبر 2026 من صفحة تطبيق <span class="ltr" dir="ltr">NextDNS</span> الرسمي في متجر <span class="ltr" dir="ltr">Google Play</span> (المعرّف <code>io.nextdns.NextDNS</code>) فكانت غير موجودة وتعيد رمز 404. لذلك لا نعتمد على تثبيت ملف <span class="ltr" dir="ltr">APK</span> من خارج المتجر. على الهاتف يكفي خيار <span class="ltr" dir="ltr">Private DNS</span> المدمج في النظام.</p>
+
+<h2><span class="ltr" dir="ltr">Android TV</span> و<span class="ltr" dir="ltr">Google TV</span></h2>
+<p>كثير من أجهزة التلفاز لا تعرض خيار <span class="ltr" dir="ltr">Private DNS</span> في واجهة الإعدادات. في هذه الحالة تبقى طرق شائعة ثلاث: أوامر <span class="ltr" dir="ltr">ADB</span> من الكمبيوتر، أو التطبيق الرسمي إن وُجد وكان متوافقًا، أو ضبط DNS في الراوتر لحماية الشبكة كلها.</p>
+
+<h3>أوامر <span class="ltr" dir="ltr">ADB</span></h3>
+<p>بعد تفعيل خيارات المطوّر وتصحيح الأخطاء عبر الشبكة على التلفاز، ومعرفة عنوان IP الخاص به من إعدادات الشبكة، يمكنك تنفيذ الأوامر التالية من الكمبيوتر. استبدل <code>TV-IP</code> بعنوان جهازك، و<code>abc123</code> بمعرّف حسابك، أو انسخ الأوامر بعد إدخال المعرّف في الصندوق أعلاه.</p>
+<pre dir="ltr"><code>adb connect TV-IP
+adb shell settings put global private_dns_mode hostname
+adb shell settings put global private_dns_specifier abc123.dns.nextdns.io</code></pre>
+<p>وللتراجع عن الإعداد وإيقاف <span class="ltr" dir="ltr">Private DNS</span>:</p>
+<pre dir="ltr"><code>adb shell settings put global private_dns_mode off</code></pre>
+<p><strong>تنبيه:</strong> لم نختبر بعد أوامر <span class="ltr" dir="ltr">ADB</span> هذه على تلفاز حقيقي، لذلك لا نقدّمها على أنها مضمونة على كل جهاز. جرّبها بحذر، وتأكد أولًا أنك تستطيع التراجع عنها بالأمر أعلاه.</p>
+
+<h3>التطبيق الرسمي</h3>
+<p>تطبيق <span class="ltr" dir="ltr">NextDNS</span> الرسمي موجّه أساسًا لهواتف أندرويد، ولا يُعد خيارًا موثوقًا لأجهزة <span class="ltr" dir="ltr">Android TV</span>، لا سيما مع غياب صفحته حاليًا في متجر <span class="ltr" dir="ltr">Google Play</span>. لا ننصح بتنزيل نُسخ <span class="ltr" dir="ltr">APK</span> من مصادر غير رسمية.</p>
+
+<h3>الراوتر</h3>
+<p>إذا أردت حماية كل الأجهزة المتصلة بالشبكة المنزلية، افتح تبويب <strong><span class="ltr" dir="ltr">Setup</span></strong> في حسابك وانسخ إعدادات DNS الخاصة بملفك. إن كان الراوتر يدعم <span class="ltr" dir="ltr">DNS-over-TLS</span> فاستخدم اسم المضيف نفسه: <code>abc123.dns.nextdns.io</code>. وإلا فاتبع التعليمات الظاهرة في حسابك لخوادم <span class="ltr" dir="ltr">IPv4</span> أو <span class="ltr" dir="ltr">IPv6</span>، بما في ذلك خيار ربط العنوان (<span class="ltr" dir="ltr">Linked IP</span>) إذا طُلب منك. ضع هذه الإعدادات في خانات DNS بالراوتر حتى تشمل الحماية الهواتف والحواسيب والتلفاز معًا.</p>
+
+<h2>ملاحظات مهمة</h2>
+<ul>
+<li>حجب إعلانات <span class="ltr" dir="ltr">YouTube</span> عبر DNS ما زال تجريبيًا وغير مضمون. قد تظهر بعض الإعلانات، لأن الإعلانات ومقاطع الفيديو قد تُقدَّم من النطاقات نفسها. إذا تعطّل التشغيل أو خدمة مثل <span class="ltr" dir="ltr">YouTube Music</span>، أوقف القائمة التجريبية أو أزل قائمة الحجب المتسببة.</li>
+<li>الخطة المجانية تتيح 300 ألف استعلام DNS شهريًا، وفق <a href="https://nextdns.io/pricing" target="_blank" rel="noopener">صفحة الأسعار الرسمية</a>. بعد تجاوز الحد تتوقف ميزات الحجب والتحليل والسجلات، ويستمر <span class="ltr" dir="ltr">NextDNS</span> في الرد على الاستعلامات كخدمة DNS عادية غير حاجبة إلى أن تتجدد الحصة في الشهر التالي. يذكر مركز المساعدة أنك تصلك رسالة عند تجاوز 250 ألف استعلام وأخرى عند بلوغ الحد.</li>
+<li>إن احتجت إلى استعلامات غير محدودة، فالخطة Pro بسعر 1.99 دولارًا شهريًا أو 19.90 دولارًا سنويًا (بالدولار الأمريكي) وفق الصفحة نفسها.</li>
+<li>إذا تعطل موقع أو تطبيق بعد تفعيل القوائم، راجع سجل الحجب في لوحة التحكم، ثم أزل قائمة الحجب المتسببة أو أضف النطاق إلى قائمة السماح (<span class="ltr" dir="ltr">Allowlist</span>).</li>
+</ul>
+
+<h2>الخلاصة</h2>
+<p><span class="ltr" dir="ltr">NextDNS</span> يمنحك تحكمًا مركزيًا في حجب الإعلانات والمتتبعات وخصوصية الشبكة، من الهاتف إلى شبكة المنزل، عبر إعداد واحد. ابدأ بـ <span class="ltr" dir="ltr">Private DNS</span> على أندرويد 9 فأعلى، واستخدم الراوتر إن أردت تغطية الأجهزة كلها، وتعامل مع أوامر التلفاز بحذر إلى أن تتأكد أنها تعمل على جهازك. الصندوق أعلاه يساعدك على نسخ اسم المضيف والأوامر، لكنه لا يغيّر أي إعداد نيابة عنك.</p>
+
+<h2>المصادر</h2>
+<ul>
+<li><a href="https://nextdns.io" target="_blank" rel="noopener">موقع <span class="ltr" dir="ltr">NextDNS</span> الرسمي</a></li>
+<li><a href="https://my.nextdns.io" target="_blank" rel="noopener">لوحة التحكم my.nextdns.io</a></li>
+<li><a href="https://nextdns.io/pricing" target="_blank" rel="noopener">صفحة الأسعار: الخطة المجانية 300 ألف استعلام شهريًا، وسلوك الخدمة بعد تجاوز الحد، وأسعار Pro</a></li>
+<li><a href="https://help.nextdns.io/t/p8hmvaw/what-happens-after-300k-queries" target="_blank" rel="noopener">مركز مساعدة <span class="ltr" dir="ltr">NextDNS</span>: ما الذي يحدث بعد 300 ألف استعلام</a></li>
+<li><a href="https://github.com/nextdns/blocklists" target="_blank" rel="noopener">كتالوج قوائم الحجب الرسمي</a>، بما في ذلك <a href="https://github.com/nextdns/blocklists/blob/main/blocklists/adguard-dns-filter.json" target="_blank" rel="noopener"><span class="ltr" dir="ltr">AdGuard DNS filter</span></a> و<a href="https://github.com/nextdns/blocklists/blob/main/blocklists/oisd.json" target="_blank" rel="noopener"><span class="ltr" dir="ltr">OISD</span></a></li>
+</ul>
+<p>#midroid5G #<span class="ltr" dir="ltr">NextDNS</span> #أندرويد #AndroidTV #خصوصية #تقنية</p>
+</div></div></article>
+<section class="mt-16 border-t border-line pt-8"><h2 class="text-sm font-medium">اقرأ أيضاً</h2><ul class="mt-2 divide-y divide-line"><li><a class="group block py-4" href="../../p/Mi5G-TV-2-1-1-%D9%85%D8%A7-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF-mt21/"><p class="text-sm text-accent">تقنية</p><p class="mt-1 font-display text-xl leading-snug font-bold transition-colors duration-150 group-hover:text-accent">Mi5G TV 2.1.1: ما الجديد منذ v1.6.0 — ريموت كامل وشاشة رئيسية عربية ومواقيت ومباريات</p></a></li><li><a class="group block py-4" href="../../p/%D8%AA%D8%B7%D8%A8%D9%8A%D9%82-Mi5G-TV-%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D9%88%D8%AA%D8%B3%D8%B1%D9%8A%D8%B9-%D8%B4%D8%A7%D8%B4%D8%A7%D8%AA-Android-TV-mtv6/"><p class="text-sm text-accent">تقنية</p><p class="mt-1 font-display text-xl leading-snug font-bold transition-colors duration-150 group-hover:text-accent">تطبيق Mi5G TV: نظّف وسرّع شاشات Android TV وGoogle TV وFire TV من هاتفك بدون روت</p></a></li><li><a class="group block py-4" href="../../p/%D8%A7%D9%84%D9%82%D9%8A%D9%85%D8%A9-%D9%85%D9%82%D8%A7%D8%A8%D9%84-%D8%A7%D9%84%D8%B3%D8%B9%D8%B1-2026-iQOO-16-%D8%B6%D8%AF-OnePlus-16-%D8%B6%D8%AF-vm26/"><p class="text-sm text-accent">تقنية</p><p class="mt-1 font-display text-xl leading-snug font-bold transition-colors duration-150 group-hover:text-accent">القيمة مقابل السعر 2026: iQOO 16 ضد OnePlus 16 ضد HONOR WIN Turbo 2 ضد Xiaomi 18 Pro</p></a></li><li><a class="group block py-4" href="../../p/%D9%87%D9%88%D8%A7%D8%AA%D9%81-%D8%A7%D9%84%D8%A3%D9%84%D8%B9%D8%A7%D8%A8-2026-Red-Magic-12-Pro-%D8%B6%D8%AF-HONOR-WIN-2-gm26/"><p class="text-sm text-accent">تقنية</p><p class="mt-1 font-display text-xl leading-snug font-bold transition-colors duration-150 group-hover:text-accent">هواتف الألعاب 2026: Red Magic 12 Pro+ ضد HONOR WIN 2 ضد iQOO 16 ضد OnePlus 16</p></a></li></ul></section></main><footer class="mt-20 border-t border-line"><div class="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-8 text-sm leading-relaxed text-muted sm:flex-row sm:items-end sm:justify-between"><p class="text-ink">midroid5G — مقارنات ومراجعات.</p><a class="font-medium text-accent transition-colors duration-150 hover:text-ink" href="https://x.com/midroid5G" target="_blank" rel="noopener">تابعنا على X @midroid5G</a><p class="max-w-md">القراءة للجميع.</p></div></footer></div><!--/$--><div data-created-with-grok-banner=""></div></body></html>
